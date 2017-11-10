@@ -1,0 +1,10 @@
+{
+    "name": "fetchtweets",
+    "version": "1.0.0",
+    "scripts": {
+        "start:dev": "node server"
+    },
+    "dependencies": {
+        "express": "4.16.2"
+    }
+}

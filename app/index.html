@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://semantic-ui.com/dist/semantic.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <title>FetchTweets</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="ui menu">
+                <div class="item ui header">FetchTweets</div>
+                <div class="right menu">
+                    <div class="item">
+                        <div class="ui action left icon input">
+                            <i class="search icon"></i>
+                            <input type="text" class="search-input" placeholder="Input tag">
+                            <button class="ui button search-button">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="content">
+            <div id="tweets-gallery" class="ui link cards" v-cloak>
+                <div class="ui message" v-if="!hasTweets">
+                    There is nothing here. Try to search.
+                </div>
+                <div class="card" v-for="image in images">
+                    <div class="image">
+                        <img v-bind:src='image.url' v-bind:width='image.width' v-bind:height='image.height'>
+                    </div>
+                    <div class="content">
+                        <div class="header">{{image.title}}</div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://semantic-ui.com/dist/semantic.min.js"></script>
+    <script src='https://vuejs.org/js/vue.min.js'></script>
+
+    <script src='service.js'></script>
+    <script src='ui.js'></script>
+</body>
+
+</html>
