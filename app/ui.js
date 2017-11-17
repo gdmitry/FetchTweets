@@ -12,12 +12,11 @@
             .then(data => data.map(item => {
                const image = item.images['standard_resolution'];
                const title = item.caption && item.caption.text || '';
-               return { ...image, ...{ title } };
+               return { ...image, title };
             }))
             .then(tweets => tweets.map(tweet => {
                 const { url, width, height, title } = tweet;
 
-                tweetsGallery.images.push({ url, width, height, title });
                 tweetsGallery.images.push({ url, width, height, title });
                 return tweet;
             }))
